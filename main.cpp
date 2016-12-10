@@ -1,50 +1,52 @@
-#include "OfficeSupplies.h"
-#include "Products.h"
-#include "Register.h"	
-#include "Shirts.h"
+/*Alexandria Piatt
+12/11/16
+Program 7*/
+
+#include "Queue.h"
+#include "departmentMenu.h"
+#include <iostream>
 
 using namespace std;
 
-void main()
-{
-	//Shirts shirt;
-	//OfficeSupplies supply;
-	//string si = "XL";
-	//string des = "CHIEFS";
-	//string des1 = "STAPLES";
-
-	//double p = 3.00;
-	//int q = 3;
-	//unsigned int c = 3000;
-
-	//double p1 = .25;
-	//int q1 = 15;
-
-	//shirt.setPrice(p);
-	//shirt.setQuanity(q);
-	//shirt.setSize(si);
-	//shirt.setDescription(des);
-
-	//shirt.calculateTotal();
-	//shirt.print(cout);
-	//
-	//supply.setPrice(p1);
-	//supply.setQuanity(q1);
-	//supply.setType(des1);
-	//supply.setCount(c);
-	//supply.setDescription(des1);
-
-	//supply.calculateTotal();
-	//supply.print(cout);
-
-	ifstream in("products.txt");
-	ofstream out("receipt.txt");
-
-	Register r;
-
-	r.addProduct(in);
-	//r.printReceipt(out);
+void main() {
+	char exit_option = 'j';
+	string dChoice;
+	int choice;
+	DepartmentMenu* chosenMenu = NULL;
+	while (exit_option != 'n') {
+		cout << "      Welcome to Sterling City Hospital." << endl;
+		cout << "1. Heart Clinic\n" << "2. Lung Clinic\n" << "3. Plastic Surgery\n" << "4. Exit\n";
+		cout << "Please enter your choice." << endl;
+		cin >> choice;
+		switch (choice) {
+		case 1: {
+			dChoice = "Heart Clinic";
+			chosenMenu = new DepartmentMenu(dChoice);
+			exit_option = 'n';
+			break;
+		}
+		case 2: {
+			dChoice = "Lung Clinic";
+			chosenMenu = new DepartmentMenu(dChoice);
+			exit_option = 'n';
+			break;
+		}
+		case 3: {
+			dChoice = "Plastic Surgery";
+			chosenMenu = new DepartmentMenu(dChoice);
+			exit_option = 'n';
+			break;
+		}
+		case 4:
+			exit_option = 'n';
+			break;
+		}
+	}
+	if (!chosenMenu->displayMenu()) {
+		exit_option = 'l';
+	}
 
 
-	
 }
+
+
