@@ -1,35 +1,34 @@
-#ifndef H_QUEUE
-#define H_QUEUE
-
-#include <iostream>
-
+#pragma once
+#include<iostream>
+#include "Patient.h"
 using namespace std;
 
-class Node {
+
+template <class T> class Node
+{
 public:
 	Node() { next = NULL; }
-	Node(int nData, Node *Link) { data = data; next = Link; }
-	int data;
-	Node* next;
-
+	Node(T theData, Node <T>* Link) { data = theData; next = Link; }
+	T data;
+	Node<T> *next;
 };
-class Queue {
-public:
+
+
+
+template <class T> class Queue
+{
 public:
 	Queue();
 	int size() const;
-	void push(const int& item);
-	int pop();
+	void push(const T & item);
+	T pop();
 	bool is_empty() const;
 	void empty();
 	//Returns the oldest (top) element
-	int top() const;
+	T top() const;
 	void print();
 private:
-	Node *Head;
-	Node *Tail;
+	Node <T> *Head;
+	Node <T> *Tail;
 	int count;
 };
-
-#endif 
-

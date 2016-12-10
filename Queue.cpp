@@ -1,26 +1,29 @@
 #include "Queue.h"
 
 //default constructor
-
-Queue::Queue()
+template <class T>
+Queue<T>::Queue()
 {
 	Head = Tail = NULL;
 	count = 0;
 }
 
 //return the size of the queue
-int Queue::size() const
+template <class T>
+int Queue<T>::size() const
 {
 	return count;
 }
 
 //check if queue is empty
-bool Queue::is_empty() const
+template <class T>
+bool Queue<T>::is_empty() const
 {
 	return (Head == NULL);
 }
 //add elements to the queue
-void Queue::push(const int& item)
+template <class T>
+void Queue<T>::push(T& item)
 {
 	if (is_empty())
 	{
@@ -37,7 +40,8 @@ void Queue::push(const int& item)
 }
 
 //remove an element from queue
-int Queue::pop()
+template <class T>
+T Queue<T>::pop()
 {
 	if (is_empty())
 	{
@@ -65,7 +69,8 @@ int Queue::pop()
 
 
 //clear the queue
-void Queue::empty()
+template <class T>
+void Queue<T>::empty()
 {
 	Node* temp;
 	while (Head != NULL)
@@ -80,7 +85,8 @@ void Queue::empty()
 }
 
 //print the first item
-int Queue::top() const
+template <class T>
+T Queue<T>::top() const
 {
 	if (is_empty())
 	{
@@ -94,7 +100,8 @@ int Queue::top() const
 
 
 //Print all the queue
-void Queue::print()
+template <class T>
+void Queue<T>::print()
 {
 	if (is_empty())
 	{
