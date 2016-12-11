@@ -1,3 +1,7 @@
+/*Alexandria Piatt
+ampiatt@mail.umkc.edu
+12/11/16*/
+
 #include "Queue.h"
 
 //default constructor
@@ -41,7 +45,12 @@ void Queue::pushToTop(const int& item) {
 		Tail = Head;
 		count++;
 	}
-	else()
+	else {
+		Node *temp = new Node(item, NULL);
+		Head->next = Head;
+		Head = temp;
+
+	}
 }
 
 //remove an element from queue

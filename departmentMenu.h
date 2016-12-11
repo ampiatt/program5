@@ -1,3 +1,7 @@
+/*Alexandria Piatt
+ampiatt@mail.umkc.edu
+12/11/16*/
+
 #ifndef H_DEPARTMENTMENU
 #define H_DEPARTMENTMENU
 
@@ -10,16 +14,12 @@ using namespace std;
 class DepartmentMenu {
 private:
 	string departmentChoice;
-	Queue <Patient*> aPatient = new Queue<Patient*>;
 public:
 	DepartmentMenu();
-	DepartmentMenu(string department, Queue<Patient> another);
-	void displayMenu();
-	void addPatient();
-	void addCriticallyIllPatient();
-	void removePatient();
-	void cancelPatient();
-	void printPatientQueue();
+	DepartmentMenu(string department);
+	//takes no parameters
+	int displayMenu();
+	//displays secondary menu
 };
 
 #endif
